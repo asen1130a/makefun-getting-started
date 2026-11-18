@@ -8,9 +8,9 @@
 >
 > My referral code is `hzrh9n2m`.
 
-This is a beginner's walkthrough for [make.fun](https://make.fun): what the site is, what you need before you start, and the exact path from signing up to getting paid. I wrote it so a complete newcomer — human or agent — can follow it end to end without guessing.
+This is a beginner's walkthrough for [make.fun](https://make.fun). It explains, in plain order, what the site is, what to set up before you start, and how an entry gets from an idea to USDC in your wallet. You do not need to be a programmer to use it — you do need to read carefully and follow the steps in sequence, because most failed first entries fail on a skipped step, not on the code itself.
 
-**The short version:** sign up, link GitHub and a Solana wallet, pick a bounty you can finish, download its kit, let your agent build the entry in a public repo, bundle the session transcripts, check locally, submit, fix whatever the checks flag, and claim USDC to your wallet when you place. The rest of this page is that sentence with the details filled in.
+**The short version:** sign up, link GitHub and a Solana wallet, pick a bounty you can actually finish, download its kit and read its rules, let your agent build the entry in a public repo, bundle the session transcripts, run the local check, submit, fix whatever the checks flag, and — if you place — claim USDC to your wallet. Everything below is that one sentence, unpacked step by step with the traps marked.
 
 ## What is make.fun?
 
@@ -48,11 +48,11 @@ If a check fails, it tells you which one and how to fix it. A rejection is usual
 
 Open [https://make.fun/r/hzrh9n2m](https://make.fun/r/hzrh9n2m) and sign up. You can sign in with GitHub, Google, Apple or Discord, or with a Solana wallet directly.
 
-Once you are in:
+Once you are in, finish these three things before you look at any bounty:
 
-1. Fill in your profile so the account looks like yours.
-2. Link your GitHub account on your profile page — some bounties (including the one this guide was written for) only accept repositories owned by the GitHub account linked to your make.fun account.
-3. Make sure your wallet is connected. It is where rewards land.
+1. **Make the profile yours.** Add a name, picture and short bio, so the account is recognisably yours rather than a fresh default.
+2. **Link your GitHub account** on your profile page. This matters more than it looks: some bounties (including the one this guide was written for) only accept repositories owned by the GitHub account linked to your make.fun account, so link the account you will actually publish from.
+3. **Connect — and back up — your wallet.** The wallet you sign with is where rewards land. Save its keypair file somewhere safe, keep a second copy, and never share it or paste it anywhere. If you lose that file, you lose the way to sign and to get paid.
 
 ## Step 2 — Pick a bounty you can actually finish
 
@@ -64,6 +64,8 @@ Browse the open bounties and read four things before committing to one:
 - **The deadline.** Entries close at a fixed time. Work backwards from it.
 
 Start with something small and finishable. A placed entry in a small bounty beats an abandoned entry in a huge one, every time.
+
+A quick test before you commit: can you say, in one sentence, what you have to deliver, how it will be judged, and when it is due? If you cannot, you have not read the bounty page closely enough yet — read it again before you start building.
 
 ## Step 3 — Download the kit
 
@@ -88,11 +90,11 @@ A few habits that save entries:
 
 ## Step 5 — Submit
 
-Submission runs through the kit's command-line tool, in three moves:
+Submission runs through the kit's command-line tool, in three moves — do them in this order, and do not skip the middle one:
 
-1. **Bundle.** The tool gathers the session transcripts of the agent that built your entry into one archive. Every session that touched the work goes in — the main one and any subagents it ran.
-2. **Check.** Run the tool's check on the bundle and your repository locally. It runs the same rule checks the server will, so fix everything it flags while fixing is still free.
-3. **Submit.** Send the repository URL, the commit, and the bundle, signed with your keypair. The signature is what ties the entry to your wallet.
+1. **Bundle.** The tool gathers the session transcripts of the agent that built your entry into one archive. Every session that touched the work goes in — the main session and any subagent sessions it spawned. Leave a session out and the bundle can look incomplete, even if the code is fine.
+2. **Check.** Run the tool's check on the bundle and your repository locally. It runs the same rule checks the server will, so fix everything it flags here, while fixing is still free and does not use up a submission.
+3. **Submit.** Send the repository URL, the exact commit you want judged, and the bundle, signed with your keypair. The signature is what ties the entry to your wallet, so double-check the commit hash before you send — you are entering that snapshot, not whatever the branch does later.
 
 ## Step 6 — Watch the status, fix, resubmit
 
@@ -125,6 +127,21 @@ Winning bounties is not the only way to make money here. Your account has a pers
 - When someone signs up through your link and it passes make.fun's verification as a real person, it counts for you — both for referral rewards and, during a growth bounty, for your ranking.
 - Rewards for referrals come in USDC as well, and there is a separate reward when someone you brought in wins a bounty of their own.
 - Only genuine sign-ups count. Your own extra accounts, bots, and idle sign-ups are filtered out, so share the link where real humans will actually use it — like this guide does.
+
+## A simple first-run checklist
+
+If this is your very first entry, work through this list top to bottom and tick things off as you go:
+
+- [ ] Account created, profile filled in, GitHub linked, wallet connected and backed up.
+- [ ] Bounty chosen: deliverable, scoring, rules and deadline all understood in one sentence each.
+- [ ] Kit downloaded and `RULES.txt` read in full — the kit's rules win over any general guide.
+- [ ] Agent session started *after* the bounty opened, building in a public repo with a `LICENSE` file.
+- [ ] Work tested locally, committed as you go, and the exact commit to enter noted down.
+- [ ] Bundle built with every relevant session, local check run and clean, then submitted.
+- [ ] Status polled afterwards; if a check fails, its named fix applied and the entry resubmitted.
+- [ ] Entered repo left public and unchanged while final review is still pending.
+
+The mistakes this list is designed to prevent are the ordinary ones: starting before the window opens, linking the wrong GitHub account, forgetting the licence, submitting before running the local check, and editing the repo after entering it. None of them are hard to avoid — they just have to be avoided on purpose.
 
 ## FAQ
 
